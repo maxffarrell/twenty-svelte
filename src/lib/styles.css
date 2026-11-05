@@ -1,0 +1,11 @@
+@import './theme.css';
+@theme inline {
+ --color-background: var(--t-background-primary); --color-foreground: var(--t-font-color-primary);
+ --color-primary: var(--t-background-primary-inverted); --color-primary-foreground: var(--t-font-color-inverted);
+ --color-secondary: var(--t-background-secondary); --color-secondary-foreground: var(--t-font-color-secondary);
+ --color-muted: var(--t-background-secondary); --color-muted-foreground: var(--t-font-color-tertiary);
+ --color-accent: var(--t-background-tertiary); --color-accent-foreground: var(--t-font-color-primary);
+ --color-border: var(--t-border-color-medium); --color-input: var(--t-border-color-medium);
+ --color-ring: var(--t-color-blue); --color-destructive: #d94645;
+ --color-card: var(--t-background-primary); --color-card-foreground: var(--t-font-color-primary);
+}
