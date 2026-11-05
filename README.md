@@ -44,3 +44,7 @@ Wrap your UI in an element with class `light` or `dark` to select Twenty's token
 Twenty's public `packages/twenty-ui` is MIT licensed. The theme CSS comes from commit `a074732678d68ee75c020cf65c95b7c5f3c79207`; its license and copyright notice are in `licenses/twenty-ui-MIT.txt`. Components originate from the MIT-licensed shadcn-svelte registry template at commit `17cc0574ab5ef1de82ec05173bb90623de9790ba` and have been adapted; its notice is in `licenses/shadcn-svelte-MIT.txt`. Both upstream licenses apply to their respective material.
 
 The supplied Figma file was inaccessible to the connected account, so no exact-node visual comparison was possible. These components use public tokens and shadcn defaults; they have not been verified as pixel-accurate Twenty components. Future work should compare against the Figma library once access is granted, expand the component and interaction coverage, and validate contrast and keyboard behavior in real browsers.
+
+## Demo and Workers deployment
+
+The demo is a prerendered SvelteKit site. Run `npm run dev` to explore it locally; `npm run build` writes static files to `build/` and also packages the library. The `wrangler.jsonc` configuration serves that directory as Cloudflare Workers static assets. Once Wrangler is authenticated to the intended Cloudflare account and Workers is set up, deploy with `npx wrangler deploy`. This deploys the demo only; it does not publish the npm package.
