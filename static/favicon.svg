@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<rect width="16" height="16" rx="4" fill="#374caa"/>
+<g fill="#fff">
+<path d="M3 5h1v1h-1z"/>
+<path d="M2 6h1v1h-1z"/>
+<path d="M3 6h1v1h-1z"/>
+<path d="M4 6h1v1h-1z"/>
+<path d="M6 6h1v1h-1z"/>
+<path d="M7 6h1v1h-1z"/>
+<path d="M9 6h1v1h-1z"/>
+<path d="M12 6h1v1h-1z"/>
+<path d="M3 7h1v1h-1z"/>
+<path d="M6 7h1v1h-1z"/>
+<path d="M9 7h1v1h-1z"/>
+<path d="M12 7h1v1h-1z"/>
+<path d="M3 8h1v1h-1z"/>
+<path d="M6 8h1v1h-1z"/>
+<path d="M9 8h1v1h-1z"/>
+<path d="M12 8h1v1h-1z"/>
+<path d="M3 9h1v1h-1z"/>
+<path d="M4 9h1v1h-1z"/>
+<path d="M7 9h1v1h-1z"/>
+<path d="M8 9h1v1h-1z"/>
+<path d="M10 9h1v1h-1z"/>
+<path d="M11 9h1v1h-1z"/>
+</g>
+</svg>
