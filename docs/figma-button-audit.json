@@ -1,0 +1,2076 @@
+{
+  "fileKey": "zpykphKQ2es7WjtOvymue6",
+  "columns": [
+    "nodeId",
+    "variant, accent, size, state, inverted",
+    "fill (#hex/alpha)",
+    "stroke (#hex/alpha)",
+    "text fill when named Button name",
+    "opacity",
+    "effects"
+  ],
+  "geometry": {
+    "radius": 8,
+    "gap": 4,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ]
+  },
+  "rows": [
+    [
+      "2975:40169",
+      "tertiary, default, 32px - Medium, hover, false",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9637:61826",
+      "tertiary, blue, 32px - Medium, hover, false",
+      "#f8faff/1",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9200:51020",
+      "tertiary, danger, 32px - Medium, hover, false",
+      "#ffefef/1",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57003",
+      "tertiary, danger, 32px - Medium, hover, true",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58811",
+      "tertiary, blue, 32px - Medium, hover, true",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61365",
+      "tertiary, default, 32px - Medium, hover, true",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40474",
+      "secondary, danger, 32px - Medium, hover, false",
+      "#ffefef/1",
+      "#ffe5e5/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57006",
+      "secondary, danger, 32px - Medium, hover, true",
+      "#000000/0.04",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58814",
+      "secondary, blue, 32px - Medium, hover, true",
+      "#000000/0.04",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61368",
+      "secondary, default, 32px - Medium, hover, true",
+      "#000000/0.04",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40172",
+      "tertiary, default, 32px - Medium, pressed, false",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9637:61829",
+      "tertiary, blue, 32px - Medium, pressed, false",
+      "#f0f4ff/1",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9200:51023",
+      "tertiary, danger, 32px - Medium, pressed, false",
+      "#ffefef/1",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57009",
+      "tertiary, danger, 32px - Medium, pressed, true",
+      "#000000/0.08",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58817",
+      "tertiary, blue, 32px - Medium, pressed, true",
+      "#000000/0.08",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61371",
+      "tertiary, default, 32px - Medium, pressed, true",
+      "#000000/0.08",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40477",
+      "secondary, danger, 32px - Medium, pressed, false",
+      "#ffefef/1",
+      "#ffe5e5/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57012",
+      "secondary, danger, 32px - Medium, pressed, true",
+      "#000000/0.08",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58820",
+      "secondary, blue, 32px - Medium, pressed, true",
+      "#000000/0.08",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61374",
+      "secondary, default, 32px - Medium, pressed, true",
+      "#000000/0.08",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40524",
+      "tertiary, default, 24px - Small, hover, false",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9637:61832",
+      "tertiary, blue, 24px - Small, hover, false",
+      "#f8faff/1",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9200:51026",
+      "tertiary, danger, 24px - Small, hover, false",
+      "#ffefef/1",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57015",
+      "tertiary, danger, 24px - Small, hover, true",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58823",
+      "tertiary, blue, 24px - Small, hover, true",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61377",
+      "tertiary, default, 24px - Small, hover, true",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40574",
+      "secondary, danger, 24px - Small, hover, false",
+      "#ffefef/1",
+      "#ffe5e5/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57018",
+      "secondary, danger, 24px - Small, hover, true",
+      "#000000/0.04",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58826",
+      "secondary, blue, 24px - Small, hover, true",
+      "#000000/0.04",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61380",
+      "secondary, default, 24px - Small, hover, true",
+      "#000000/0.04",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40527",
+      "tertiary, default, 24px - Small, pressed, false",
+      "#000000/0.04",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9637:61835",
+      "tertiary, blue, 24px - Small, pressed, false",
+      "#f0f4ff/1",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9200:51029",
+      "tertiary, danger, 24px - Small, pressed, false",
+      "#ffefef/1",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57021",
+      "tertiary, danger, 24px - Small, pressed, true",
+      "#000000/0.08",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58829",
+      "tertiary, blue, 24px - Small, pressed, true",
+      "#000000/0.08",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61383",
+      "tertiary, default, 24px - Small, pressed, true",
+      "#000000/0.08",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40577",
+      "secondary, danger, 24px - Small, pressed, false",
+      "#ffefef/1",
+      "#ffe5e5/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57024",
+      "secondary, danger, 24px - Small, pressed, true",
+      "#000000/0.08",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58832",
+      "secondary, blue, 24px - Small, pressed, true",
+      "#000000/0.08",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61386",
+      "secondary, default, 24px - Small, pressed, true",
+      "#000000/0.08",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40175",
+      "tertiary, default, 32px - Medium, disabled, false",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9637:61838",
+      "tertiary, blue, 32px - Medium, disabled, false",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9200:51032",
+      "tertiary, danger, 32px - Medium, disabled, false",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:57027",
+      "tertiary, danger, 32px - Medium, disabled, true",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:58835",
+      "tertiary, blue, 32px - Medium, disabled, true",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:61389",
+      "tertiary, default, 32px - Medium, disabled, true",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "2975:40480",
+      "secondary, danger, 32px - Medium, disabled, false",
+      "",
+      "#e5484d/1",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:57030",
+      "secondary, danger, 32px - Medium, disabled, true",
+      "",
+      "#ffffff/1",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:58838",
+      "secondary, blue, 32px - Medium, disabled, true",
+      "",
+      "#ffffff/1",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:61392",
+      "secondary, default, 32px - Medium, disabled, true",
+      "",
+      "#ffffff/1",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "2975:40530",
+      "tertiary, default, 24px - Small, disabled, false",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9637:61841",
+      "tertiary, blue, 24px - Small, disabled, false",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9200:51035",
+      "tertiary, danger, 24px - Small, disabled, false",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:57033",
+      "tertiary, danger, 24px - Small, disabled, true",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:58841",
+      "tertiary, blue, 24px - Small, disabled, true",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:61395",
+      "tertiary, default, 24px - Small, disabled, true",
+      "",
+      "",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "2975:40580",
+      "secondary, danger, 24px - Small, disabled, false",
+      "",
+      "#e5484d/1",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:57036",
+      "secondary, danger, 24px - Small, disabled, true",
+      "",
+      "#ffffff/1",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:58844",
+      "secondary, blue, 24px - Small, disabled, true",
+      "",
+      "#ffffff/1",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:61398",
+      "secondary, default, 24px - Small, disabled, true",
+      "",
+      "#ffffff/1",
+      "",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "2975:40178",
+      "tertiary, default, 32px - Medium, focused, false",
+      "#ffffff/0.8",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9637:61844",
+      "tertiary, blue, 32px - Medium, focused, false",
+      "#ffffff/0.8",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9200:51038",
+      "tertiary, danger, 32px - Medium, focused, false",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:57039",
+      "tertiary, danger, 32px - Medium, focused, true",
+      "#e5484d/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:58847",
+      "tertiary, blue, 32px - Medium, focused, true",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:61401",
+      "tertiary, default, 32px - Medium, focused, true",
+      "#666666/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "2975:40483",
+      "secondary, danger, 32px - Medium, focused, false",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:57042",
+      "secondary, danger, 32px - Medium, focused, true",
+      "#e5484d/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:58850",
+      "secondary, blue, 32px - Medium, focused, true",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:61404",
+      "secondary, default, 32px - Medium, focused, true",
+      "#666666/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "2975:40533",
+      "tertiary, default, 24px - Small, focused, false",
+      "#ffffff/0.8",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9637:61847",
+      "tertiary, blue, 24px - Small, focused, false",
+      "#ffffff/0.8",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9200:51041",
+      "tertiary, danger, 24px - Small, focused, false",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:57045",
+      "tertiary, danger, 24px - Small, focused, true",
+      "#e5484d/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:58853",
+      "tertiary, blue, 24px - Small, focused, true",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:61407",
+      "tertiary, default, 24px - Small, focused, true",
+      "#666666/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "2975:40583",
+      "secondary, danger, 24px - Small, focused, false",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:57048",
+      "secondary, danger, 24px - Small, focused, true",
+      "#e5484d/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:58856",
+      "secondary, blue, 24px - Small, focused, true",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:61410",
+      "secondary, default, 24px - Small, focused, true",
+      "#666666/1",
+      "#3e63dd/1",
+      "",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "925:30301",
+      "primary, default, 32px - Medium, default, false",
+      "#000000/0.02",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61850",
+      "primary, blue, 32px - Medium, default, false",
+      "#3e63dd/1",
+      "#000000/0.04",
+      "#ffffff/1",
+      1,
+      []
+    ],
+    [
+      "9213:96841",
+      "primary, danger, 32px - Medium, default, false",
+      "#e5484d/1",
+      "#000000/0.04",
+      "#ffe5e5/1",
+      1,
+      []
+    ],
+    [
+      "26857:57051",
+      "primary, danger, 32px - Medium, default, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#e5484d/1",
+      1,
+      []
+    ],
+    [
+      "26857:58859",
+      "primary, blue, 32px - Medium, default, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "26857:61413",
+      "primary, default, 32px - Medium, default, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "961:45364",
+      "primary, default, 24px - Small, default, false",
+      "#000000/0.02",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61853",
+      "primary, blue, 24px - Small, default, false",
+      "#3e63dd/1",
+      "#000000/0.04",
+      "#ffffff/1",
+      1,
+      []
+    ],
+    [
+      "9213:96844",
+      "primary, danger, 24px - Small, default, false",
+      "#e5484d/1",
+      "#000000/0.04",
+      "#ffe5e5/1",
+      1,
+      []
+    ],
+    [
+      "26857:57054",
+      "primary, danger, 24px - Small, default, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#e5484d/1",
+      1,
+      []
+    ],
+    [
+      "26857:58862",
+      "primary, blue, 24px - Small, default, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "26857:61416",
+      "primary, default, 24px - Small, default, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "925:30417",
+      "secondary, default, 32px - Medium, default, false",
+      "",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61856",
+      "secondary, blue, 32px - Medium, default, false",
+      "",
+      "#c6d4f9/1",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "961:45367",
+      "secondary, default, 24px - Small, default, false",
+      "",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61859",
+      "secondary, blue, 24px - Small, default, false",
+      "",
+      "#c6d4f9/1",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "925:30397",
+      "primary, default, 32px - Medium, focused, false",
+      "#000000/0.04",
+      "#3e63dd/1",
+      "#666666/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9637:61862",
+      "primary, blue, 32px - Medium, focused, false",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      "#ffffff/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9213:96847",
+      "primary, danger, 32px - Medium, focused, false",
+      "#e5484d/1",
+      "#3e63dd/1",
+      "#ffe5e5/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:57057",
+      "primary, danger, 32px - Medium, focused, true",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "#e5484d/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:58865",
+      "primary, blue, 32px - Medium, focused, true",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:61419",
+      "primary, default, 32px - Medium, focused, true",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "#666666/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "961:45370",
+      "primary, default, 24px - Small, focused, false",
+      "#000000/0.04",
+      "#3e63dd/1",
+      "#666666/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9637:61865",
+      "primary, blue, 24px - Small, focused, false",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      "#ffffff/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9213:96850",
+      "primary, danger, 24px - Small, focused, false",
+      "#e5484d/1",
+      "#3e63dd/1",
+      "#ffe5e5/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:57060",
+      "primary, danger, 24px - Small, focused, true",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "#e5484d/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:58868",
+      "primary, blue, 24px - Small, focused, true",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "26857:61422",
+      "primary, default, 24px - Small, focused, true",
+      "#ffffff/1",
+      "#3e63dd/1",
+      "#666666/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "925:30420",
+      "secondary, default, 32px - Medium, focused, false",
+      "#ffffff/0.8",
+      "#3e63dd/1",
+      "#666666/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9637:61868",
+      "secondary, blue, 32px - Medium, focused, false",
+      "#ffffff/0.8",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "961:45373",
+      "secondary, default, 24px - Small, focused, false",
+      "#ffffff/0.8",
+      "#3e63dd/1",
+      "#666666/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "9637:61871",
+      "secondary, blue, 24px - Small, focused, false",
+      "#ffffff/0.8",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      1,
+      [
+        [
+          "INNER_SHADOW",
+          0,
+          2,
+          {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        ]
+      ]
+    ],
+    [
+      "925:30389",
+      "primary, default, 32px - Medium, disabled, false",
+      "#000000/0.04",
+      "#000000/0.08",
+      "#666666/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9637:61874",
+      "primary, blue, 32px - Medium, disabled, false",
+      "#3e63dd/1",
+      "#000000/0.04",
+      "#ffffff/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9213:96853",
+      "primary, danger, 32px - Medium, disabled, false",
+      "#e5484d/1",
+      "#000000/0.04",
+      "#ffe5e5/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:57063",
+      "primary, danger, 32px - Medium, disabled, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#e5484d/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:58871",
+      "primary, blue, 32px - Medium, disabled, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#3e63dd/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:61425",
+      "primary, default, 32px - Medium, disabled, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#666666/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "961:45376",
+      "primary, default, 24px - Small, disabled, false",
+      "#000000/0.04",
+      "#000000/0.08",
+      "#666666/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9637:61877",
+      "primary, blue, 24px - Small, disabled, false",
+      "#3e63dd/1",
+      "#000000/0.04",
+      "#ffffff/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9213:96856",
+      "primary, danger, 24px - Small, disabled, false",
+      "#e5484d/1",
+      "#000000/0.04",
+      "#ffe5e5/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:57066",
+      "primary, danger, 24px - Small, disabled, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#e5484d/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:58874",
+      "primary, blue, 24px - Small, disabled, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#3e63dd/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "26857:61428",
+      "primary, default, 24px - Small, disabled, true",
+      "#ffffff/1",
+      "#000000/0.04",
+      "#666666/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "925:30423",
+      "secondary, default, 32px - Medium, disabled, false",
+      "",
+      "#999999/1",
+      "#666666/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9637:61880",
+      "secondary, blue, 32px - Medium, disabled, false",
+      "",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "961:45379",
+      "secondary, default, 24px - Small, disabled, false",
+      "",
+      "#999999/1",
+      "#666666/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "9637:61883",
+      "secondary, blue, 24px - Small, disabled, false",
+      "",
+      "#3e63dd/1",
+      "#3e63dd/1",
+      0.23999999463558197,
+      []
+    ],
+    [
+      "925:30303",
+      "primary, default, 32px - Medium, hover, false",
+      "#000000/0.04",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61886",
+      "primary, blue, 32px - Medium, hover, false",
+      "#3a5ccc/1",
+      "#000000/0.04",
+      "#ffffff/1",
+      1,
+      []
+    ],
+    [
+      "9213:96859",
+      "primary, danger, 32px - Medium, hover, false",
+      "#dc3d43/1",
+      "#000000/0.04",
+      "#ffe5e5/1",
+      1,
+      []
+    ],
+    [
+      "26857:57069",
+      "primary, danger, 32px - Medium, hover, true",
+      "#fcfcfc/1",
+      "#000000/0.04",
+      "#e5484d/1",
+      1,
+      []
+    ],
+    [
+      "26857:58877",
+      "primary, blue, 32px - Medium, hover, true",
+      "#fcfcfc/1",
+      "#000000/0.04",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "26857:61431",
+      "primary, default, 32px - Medium, hover, true",
+      "#fcfcfc/1",
+      "#000000/0.04",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "2911:280561",
+      "primary, default, 32px - Medium, pressed, false",
+      "#000000/0.08",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61889",
+      "primary, blue, 32px - Medium, pressed, false",
+      "#101d46/1",
+      "#000000/0.04",
+      "#ffffff/1",
+      1,
+      []
+    ],
+    [
+      "9213:96862",
+      "primary, danger, 32px - Medium, pressed, false",
+      "#dc3d43/1",
+      "#000000/0.04",
+      "#ffe5e5/1",
+      1,
+      []
+    ],
+    [
+      "26857:57072",
+      "primary, danger, 32px - Medium, pressed, true",
+      "#f1f1f1/1",
+      "#000000/0.04",
+      "#e5484d/1",
+      1,
+      []
+    ],
+    [
+      "26857:58880",
+      "primary, blue, 32px - Medium, pressed, true",
+      "#f1f1f1/1",
+      "#000000/0.04",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "26857:61434",
+      "primary, default, 32px - Medium, pressed, true",
+      "#f1f1f1/1",
+      "#000000/0.04",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "961:45382",
+      "primary, default, 24px - Small, hover, false",
+      "#000000/0.04",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61892",
+      "primary, blue, 24px - Small, hover, false",
+      "#3a5ccc/1",
+      "#000000/0.04",
+      "#ffffff/1",
+      1,
+      []
+    ],
+    [
+      "9213:96865",
+      "primary, danger, 24px - Small, hover, false",
+      "#dc3d43/1",
+      "#000000/0.04",
+      "#ffe5e5/1",
+      1,
+      []
+    ],
+    [
+      "26857:57075",
+      "primary, danger, 24px - Small, hover, true",
+      "#fcfcfc/1",
+      "#000000/0.04",
+      "#e5484d/1",
+      1,
+      []
+    ],
+    [
+      "26857:58883",
+      "primary, blue, 24px - Small, hover, true",
+      "#fcfcfc/1",
+      "#000000/0.04",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "26857:61437",
+      "primary, default, 24px - Small, hover, true",
+      "#fcfcfc/1",
+      "#000000/0.04",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "2911:280564",
+      "primary, default, 24px - Small, pressed, false",
+      "#000000/0.08",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61895",
+      "primary, blue, 24px - Small, pressed, false",
+      "#101d46/1",
+      "#000000/0.04",
+      "#ffffff/1",
+      1,
+      []
+    ],
+    [
+      "9213:96868",
+      "primary, danger, 24px - Small, pressed, false",
+      "#dc3d43/1",
+      "#000000/0.04",
+      "#ffe5e5/1",
+      1,
+      []
+    ],
+    [
+      "26857:57078",
+      "primary, danger, 24px - Small, pressed, true",
+      "#f1f1f1/1",
+      "#000000/0.04",
+      "#e5484d/1",
+      1,
+      []
+    ],
+    [
+      "26857:58886",
+      "primary, blue, 24px - Small, pressed, true",
+      "#f1f1f1/1",
+      "#000000/0.04",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "26857:61440",
+      "primary, default, 24px - Small, pressed, true",
+      "#f1f1f1/1",
+      "#000000/0.04",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "925:30426",
+      "secondary, default, 32px - Medium, hover, false",
+      "#000000/0.04",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61898",
+      "secondary, blue, 32px - Medium, hover, false",
+      "#f0f4ff/1",
+      "#c6d4f9/1",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "2911:280567",
+      "secondary, default, 32px - Medium, pressed, false",
+      "#000000/0.04",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61901",
+      "secondary, blue, 32px - Medium, pressed, false",
+      "#e6edfe/1",
+      "#c6d4f9/1",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "961:45385",
+      "secondary, default, 24px - Small, hover, false",
+      "#000000/0.04",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61904",
+      "secondary, blue, 24px - Small, hover, false",
+      "#f0f4ff/1",
+      "#c6d4f9/1",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "2911:280570",
+      "secondary, default, 24px - Small, pressed, false",
+      "#000000/0.04",
+      "#000000/0.08",
+      "#666666/1",
+      1,
+      []
+    ],
+    [
+      "9637:61907",
+      "secondary, blue, 24px - Small, pressed, false",
+      "#e6edfe/1",
+      "#c6d4f9/1",
+      "#3e63dd/1",
+      1,
+      []
+    ],
+    [
+      "2975:40181",
+      "tertiary, default, 32px - Medium, default, false",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9637:61910",
+      "tertiary, blue, 32px - Medium, default, false",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9200:51044",
+      "tertiary, danger, 32px - Medium, default, false",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57081",
+      "tertiary, danger, 32px - Medium, default, true",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58889",
+      "tertiary, blue, 32px - Medium, default, true",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61443",
+      "tertiary, default, 32px - Medium, default, true",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40486",
+      "secondary, danger, 32px - Medium, default, false",
+      "",
+      "#f9c6c6/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57084",
+      "secondary, danger, 32px - Medium, default, true",
+      "",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58892",
+      "secondary, blue, 32px - Medium, default, true",
+      "",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61446",
+      "secondary, default, 32px - Medium, default, true",
+      "",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40536",
+      "tertiary, default, 24px - Small, default, false",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9637:61913",
+      "tertiary, blue, 24px - Small, default, false",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "9200:51047",
+      "tertiary, danger, 24px - Small, default, false",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57087",
+      "tertiary, danger, 24px - Small, default, true",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58895",
+      "tertiary, blue, 24px - Small, default, true",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61449",
+      "tertiary, default, 24px - Small, default, true",
+      "",
+      "",
+      "",
+      1,
+      []
+    ],
+    [
+      "2975:40586",
+      "secondary, danger, 24px - Small, default, false",
+      "",
+      "#f9c6c6/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:57090",
+      "secondary, danger, 24px - Small, default, true",
+      "",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:58898",
+      "secondary, blue, 24px - Small, default, true",
+      "",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ],
+    [
+      "26857:61452",
+      "secondary, default, 24px - Small, default, true",
+      "",
+      "#ffffff/1",
+      "",
+      1,
+      []
+    ]
+  ]
+}

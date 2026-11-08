@@ -26,3 +26,6 @@
 .field { display:flex; flex-direction:column; gap:4px; }
 .source-link:hover { text-decoration:underline; }
 @media(max-width:600px) { .figma-button-grid { grid-template-columns:1fr; } .variant-column { gap:8px; } }
+
+@supports (text-box-trim:trim-both) { .field-hint { text-box-trim:trim-both; text-box-edge:cap alphabetic; } }
+.source-link { white-space:nowrap; }

@@ -1,6 +1,6 @@
 import { describe, it, expect, afterEach } from 'vitest';
 import { render, screen, fireEvent, cleanup } from '@testing-library/svelte';
-import { Button, Input } from '../src/lib/index.js';
+import { Button, Input, Card } from '../src/lib/index.js';
 
 afterEach(cleanup);
 describe('components', () => {
@@ -18,6 +18,14 @@ describe('components', () => {
   expect(input.value).toBe('Ada');
   await fireEvent.input(input, { target: { value: 'Grace' } });
   expect(input.value).toBe('Grace');
+ });
+ it('keeps the card action accessible and out of native form submission by default', async () => {
+  let calls = 0;
+  render(Card.Action, { props: { 'aria-label': 'Remove contact', onclick: () => calls++ } });
+  const action = screen.getByRole('button', { name: 'Remove contact' }) as HTMLButtonElement;
+  expect(action.type).toBe('button');
+  await fireEvent.click(action);
+  expect(calls).toBe(1);
  });
  it('sets disabled on a button', () => {
   render(Button, { props: { 'aria-label': 'Unavailable', disabled: true } });

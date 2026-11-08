@@ -31,6 +31,8 @@
 	import { cn } from "$lib/utils.js";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 	import type { Snippet } from "svelte";
+	import searchIcon from "$lib/assets/figma/search.svg";
+	import chevronIcon from "$lib/assets/figma/chevron-down.svg";
 
 	let {
 		ref = $bindable(null),
@@ -41,6 +43,11 @@
 		child,
 		leadingIcon,
 		trailingIcon,
+		showLeadingIcon = true,
+		showTrailingIcon = false,
+		showShortcut = false,
+		shortcut = "⌘O",
+		inverted = false,
 		children,
 		class: className,
 		...restProps
@@ -49,6 +56,11 @@
 			child?: Snippet<[{ props: Record<string, unknown> }]>;
 			leadingIcon?: Snippet;
 			trailingIcon?: Snippet;
+			showLeadingIcon?: boolean;
+			showTrailingIcon?: boolean;
+			showShortcut?: boolean;
+			shortcut?: string;
+			inverted?: boolean;
 			ref?: HTMLElement | null;
 		} = $props();
 
@@ -57,6 +69,9 @@
 		type,
 		class: cn(buttonVariants({ variant, size, accent: accent ?? (variant === "destructive" ? "danger" : "default") }), className),
 		"data-slot": "button",
+		"data-variant": variant === "secondary" || variant === "outline" ? "secondary" : variant === "tertiary" || variant === "ghost" || variant === "link" ? "tertiary" : "primary",
+		"data-accent": accent ?? (variant === "destructive" ? "danger" : "default"),
+		"data-inverted": String(inverted),
 	});
 </script>
 
@@ -64,8 +79,13 @@
 	{@render child({ props: mergedProps })}
 {:else}
 	<button {...mergedProps} bind:this={ref}>
-		{@render leadingIcon?.()}
+		{#if showLeadingIcon}
+			{#if leadingIcon}{@render leadingIcon()}{:else}<span class="tw-figma-icon tw-button-icon" style:mask-image={`url("${searchIcon}")`} aria-hidden="true"></span>{/if}
+		{/if}
 		{#if children}<span class="tw-button-label">{@render children()}</span>{/if}
-		{@render trailingIcon?.()}
+		{#if showShortcut}<span class="tw-button-separator" aria-hidden="true"></span><span class="tw-button-shortcut">{shortcut}</span>{/if}
+		{#if showTrailingIcon}
+			{#if trailingIcon}{@render trailingIcon()}{:else}<span class="tw-figma-icon tw-button-icon" style:mask-image={`url("${chevronIcon}")`} aria-hidden="true"></span>{/if}
+		{/if}
 	</button>
 {/if}

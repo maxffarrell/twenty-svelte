@@ -1,5 +1,10 @@
 /* Measured from Twenty's Figma components. See docs/FIGMA_PORT.md. */
 @layer components {
+  .tw-button, .tw-input-shell, .tw-input, .tw-textarea, .tw-card, .tw-card-avatar, .tw-card-action {
+    --t-corner-shape: round;
+    corner-shape: round;
+    -webkit-font-smoothing: antialiased;
+  }
   :where(.light, .dark) {
     --tw-control-font: Inter, ui-sans-serif, system-ui, sans-serif;
     --tw-text: var(--t-font-color-primary);
@@ -113,6 +118,21 @@
   .tw-button--link { text-decoration: underline; text-underline-offset: 4px; }
   .tw-button svg { width: 14px; height: 14px; flex-shrink: 0; pointer-events: none; }
   .tw-button-label { display: block; }
+  .tw-figma-icon { display:inline-block; flex:none; background:currentColor; mask-repeat:no-repeat; mask-position:center; }
+  .tw-button-icon { width:14px; height:14px; }
+  .tw-input-icon { width:16px; height:16px; }
+  .tw-button-separator { width:1px; height:calc(100% - 16px); min-height:8px; border-radius:56px; background:var(--tw-hover); }
+  .tw-button-shortcut { color:var(--tw-label); }
+  .tw-button--blue .tw-button-shortcut { color:#aec0f5; }
+  .tw-button--danger .tw-button-shortcut { color:#eb9091; }
+  .tw-button--blue .tw-button-separator { background:#f0f4ff; }
+  .tw-button--danger .tw-button-separator { background:#ffe5e5; }
+  .tw-button--primary:where(.tw-button--blue,.tw-button--danger) .tw-button-shortcut { color:inherit; }
+  @supports (width: calc-size(max-content, round(up, size, 1px))) {
+    .tw-button { width:calc-size(max-content, round(up, size, 1px)); }
+    .tw-button--icon { width:32px; }
+    .tw-button--icon-sm { width:24px; }
+  }
 
   .tw-input, .tw-textarea {
     display: block;
@@ -129,12 +149,19 @@
     outline: none;
   }
   .tw-input { height: 32px; padding: 0 4px 0 8px; }
+  .tw-input-shell { display:flex; align-items:center; width:100%; min-width:0; height:32px; gap:4px; padding:0 4px 0 8px; box-sizing:border-box; border:1px solid var(--tw-border); border-radius:8px; background:var(--tw-surface); color:var(--tw-text); }
+  .tw-input-shell[data-control-size='sm'] { height:24px; }
+  .tw-input-prefix { display:flex; align-items:center; flex:none; }
+  .tw-input-shell .tw-input { flex:1; padding:0; border:0; border-radius:0; background:transparent; }
+  .tw-input-shell:focus-within { border-color:var(--tw-blue); }
+  .tw-input-shell[data-invalid='true'] { border-color:var(--tw-danger-border); }
   .tw-input[data-control-size='sm'] { height: 24px; }
-  .tw-textarea { min-height: 80px; padding: 8px; resize: vertical; }
+  .tw-textarea { min-height: 80px; padding: 8px; border:0; box-shadow:inset 0 0 0 1px var(--tw-border); font-weight:500; resize: none; }
   .tw-input::placeholder, .tw-textarea::placeholder { color: var(--tw-label); opacity: 1; }
   .tw-input:focus, .tw-textarea:focus { border-color: var(--tw-blue); }
+  .tw-textarea:focus { box-shadow:inset 0 0 0 1px var(--tw-blue); }
   .tw-input[aria-invalid='true'] { border-color: var(--tw-danger-border); }
-  .tw-textarea[aria-invalid='true'] { border-color: var(--tw-textarea-danger-border); }
+  .tw-textarea[aria-invalid='true'] { box-shadow:inset 0 0 0 1px var(--tw-textarea-danger-border); }
   .tw-input:disabled, .tw-textarea:disabled { color: var(--tw-label); cursor: not-allowed; }
   .tw-label {
     display: flex;
@@ -147,6 +174,7 @@
   }
   @supports (text-box-trim: trim-both) {
     .tw-button-label { text-box-trim: trim-both; text-box-edge: cap alphabetic; }
+    .tw-button-shortcut { text-box-trim: trim-both; text-box-edge: cap alphabetic; }
     .tw-label-text { text-box-trim: trim-both; text-box-edge: cap alphabetic; }
   }
   .tw-card {
@@ -155,14 +183,17 @@
     border:0; border-radius:0; background:transparent; box-shadow:inset 0 -1px 0 var(--t-border-color-light);
     color:var(--tw-text); font:400 13px/1.4 var(--tw-control-font);
   }
-  .tw-card-header { display:flex; flex-direction:column; flex:1; min-width:0; gap:8px; }
+  .tw-card-header { display:flex; flex-direction:column; align-items:flex-start; flex:1; min-width:0; gap:8px; }
   .tw-card-title, .tw-card-description { margin:0; font:500 13px/1.4 var(--tw-control-font); letter-spacing:0; }
   .tw-card-description { font-weight:400; color:var(--t-font-color-tertiary); }
-  .tw-card-action { display:flex; align-items:center; justify-content:center; width:24px; height:24px; flex-shrink:0; }
+  .tw-card-action { display:flex; align-items:center; justify-content:center; width:24px; height:24px; padding:0 4px; flex-shrink:0; background:transparent; border:0; border-radius:8px; cursor:pointer; }
+  .tw-card-avatar { display:flex; align-items:center; justify-content:center; flex:none; width:24px; height:24px; box-sizing:border-box; padding:8px; border-radius:80px; background:#eddbf9; color:#2b0e44; font:500 13px/1.4 var(--tw-control-font); }
+  .tw-card-avatar span { flex:none; }
   .tw-card-content { min-width:0; flex:1; }
   .tw-card-footer { display:flex; align-items:center; gap:4px; }
   @supports (text-box-trim: trim-both) {
     .tw-card-title, .tw-card-description { text-box-trim:trim-both; text-box-edge:cap alphabetic; }
+    .tw-card-avatar span { text-box-trim:trim-both; text-box-edge:cap alphabetic; }
   }
 
 }
