@@ -1,35 +1,68 @@
 <script lang="ts">
  import { Button, Input, Label, Textarea, Card } from '$lib';
- let dark = $state(false);
+ import DemoLink from '../demo/DemoLink.svelte';
+ const seed = [
+  { id: 1, name: 'Thomas Kurian', email: 'thomas@company.com', role: 'Chief executive officer' },
+  { id: 2, name: 'Ada Lovelace', email: 'ada@analytical.co', role: 'Mathematician' },
+  { id: 3, name: 'Alex Morgan', email: 'alex@studio.co', role: 'Product designer' }
+ ];
+ let contacts = $state(seed.map(contact => ({ ...contact })));
+ let query = $state('');
  let name = $state('');
  let email = $state('');
  let note = $state('');
- let saved = $state('');
- let cardAction = $state('');
+ let status = $state('Changes stay in this browser tab.');
  let copied = $state(false);
- const example = `<script lang="ts">\n  import { Button, Input, Label } from 'twenty-svelte';\n<\/script>\n\n<Label for="name">Name</Label>\n<Input id="name" placeholder="Ada Lovelace" />\n<Button accent="blue">Save contact</Button>`;
- async function copyExample() {
-  try { await navigator.clipboard.writeText(example); copied = true; } catch { copied = false; }
+ const filtered = $derived(contacts.filter(contact => `${contact.name} ${contact.role} ${contact.email}`.toLowerCase().includes(query.toLowerCase())));
+ const example = `<script lang="ts">\n  import { Button, Input, Label } from 'twenty-svelte';\n<\/script>\n\n<Label for="name">Full name</Label>\n<Input id="name" showPrefix={false} />\n<Button accent="blue" showLeadingIcon={false}>\n  Save contact\n</Button>`;
+ function save(event: SubmitEvent) {
+  event.preventDefault();
+  contacts = [...contacts, { id: Date.now(), name: name.trim(), email: email.trim(), role: note.trim() || 'Add a job title' }];
+  status = `Added ${name.trim()}.`;
+  name = ''; email = ''; note = ''; query = '';
+ }
+ function remove(id: number) {
+  const contact = contacts.find(item => item.id === id);
+  contacts = contacts.filter(item => item.id !== id);
+  status = `Removed ${contact?.name}.`;
+ }
+ async function copy() {
+  try { await navigator.clipboard.writeText(example); copied = true; }
+  catch { status = 'Clipboard unavailable. Select the example to copy it.'; }
  }
 </script>
-<svelte:head><title>Twenty Svelte — Component library</title><meta name="description" content="Twenty Figma component styling ported to Svelte: buttons, text inputs, labels, and textareas." /></svelte:head>
-<div class={["site", { dark, light: !dark }]}>
+<svelte:head>
+ <title>Twenty Svelte — Component workbench</title>
+ <meta name="description" content="Explore Twenty’s Figma components in Svelte. A working contact workspace built with our own buttons, fields, and record cards." />
+</svelte:head>
+<div class="workbench">
  <a class="skip" href="#content">Skip to content</a>
- <header class="topbar"><div class="topbar-inner"><a class="brand" href="#top"><span class="brand-mark">tw</span><span>twenty<span class="brand-muted"> / svelte</span></span></a><nav aria-label="Main navigation"><a href="#components">Components</a><a href="#usage">Usage</a><a href="https://github.com/maxffarrell/twenty-svelte">GitHub ↗</a></nav><Button variant="outline" size="sm" onclick={() => dark = !dark} aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}>{dark ? '☀ Light' : '◐ Dark'}</Button></div></header>
- <main id="content">
-  <section class="hero wrap" id="top"><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> OPEN SOURCE COMPONENTS <span class="eyebrow-line"></span> SVELTE 5</div><h1>Familiar building blocks.<br/><span>Made for Svelte.</span></h1><p>Twenty’s component styling, measured from the Figma source and built for Svelte. Compact controls, precise type, and the details that make the system feel like Twenty.</p><div class="hero-actions"><a class="action-primary" href="#components">Explore components <span aria-hidden="true">↗</span></a><a class="action-secondary" href="https://github.com/maxffarrell/twenty-svelte">View on GitHub <span aria-hidden="true">→</span></a></div><div class="hero-note"><span>◈</span> Built with shadcn-svelte <span class="separator">/</span> Measured from Figma</div></div><div class="hero-art" aria-hidden="true"><div class="art-window"><div class="art-top"><i></i><i></i><i></i><span>workspace / contacts</span></div><div class="art-content"><div class="art-heading"><span class="art-avatar">A</span><div><b>Alex Morgan</b><small>Product designer</small></div><span class="art-more">···</span></div><div class="art-divider"></div><div class="art-row"><span>Email</span><strong>alex@studio.co</strong></div><div class="art-row"><span>Company</span><strong>Acme Studio</strong></div><div class="art-row"><span>Status</span><strong class="art-tag">● &nbsp;Active</strong></div><div class="art-footer"><span>◷ &nbsp; Updated just now</span><span class="art-button">View profile ↗</span></div></div></div><div class="art-caption">A SMALLER SURFACE FOR BIGGER IDEAS <span>↗</span></div></div></section>
-  <section class="intro wrap" id="components"><div><div class="section-kicker">THE COMPONENTS <span>01 / 03</span></div><h2>Designed to work together.</h2></div><p>Button, text input, label, textarea, and small-card specimens from Twenty’s Figma library. Try focus, hover, validation, and disabled states below.</p></section>
-  <section class="showcase wrap" aria-label="Component examples">
-   <article class="demo-panel wide"><div class="panel-heading"><div><span class="number">01</span><h3>Buttons</h3><p>24px and 32px. Three variants, three accents.</p></div><a class="component-label source-link" href="https://www.figma.com/design/zpykphKQ2es7WjtOvymue6?node-id=170-9512">FIGMA ↗</a></div><div class="preview"><div class="figma-button-grid">
-    {#each ['primary', 'secondary', 'tertiary'] as variant (variant)}
-     <div class="variant-column"><span class="spec-label">{variant}</span>{#each ['default', 'blue', 'danger'] as accent (accent)}<div class="button-row"><Button variant={variant as 'primary' | 'secondary' | 'tertiary'} accent={accent as 'default' | 'blue' | 'danger'} size="sm">Filter</Button><Button variant={variant as 'primary' | 'secondary' | 'tertiary'} accent={accent as 'default' | 'blue' | 'danger'}>Filter</Button></div>{/each}</div>
-    {/each}
-   </div><div class="preview-rule"></div><div class="button-row"><Button accent="blue">Save contact</Button><Button accent="blue" disabled>Disabled</Button><span class="spec-caption">Hover, press, or Tab to focus a button.</span></div></div><div class="panel-foot"><span>Inter 13 / 500 · Radius 8 · Gap 4</span><span>Source: Button</span></div></article>
-   <article class="demo-panel"><div class="panel-heading"><div><span class="number">02</span><h3>Form controls</h3><p>Inputs, labels, and textarea.</p></div><a class="component-label source-link" href="https://www.figma.com/design/zpykphKQ2es7WjtOvymue6?node-id=111579-648163">FIGMA ↗</a></div><div class="preview form-preview"><form onsubmit={(event) => { event.preventDefault(); saved = name.trim(); }}><div class="field"><Label for="name">Full name</Label><Input id="name" placeholder="e.g. Alex Morgan" bind:value={name} required /></div><div class="field"><Label for="email">Email address</Label><Input id="email" type="email" placeholder="alex@company.com" bind:value={email} required /></div><div class="field"><Label for="note">Note <span class="optional">optional</span></Label><Textarea id="note" placeholder="Add a little context…" bind:value={note} /></div><Button type="submit" accent="blue">Save contact</Button><p class="status" role="status">{saved ? `Contact saved locally: ${saved}` : 'Try it — nothing is sent anywhere.'}</p></form></div><div class="panel-foot"><span>Native form behavior</span><span>Keyboard accessible</span></div></article>
-   <article class="demo-panel"><div class="panel-heading"><div><span class="number">03</span><h3>Field states</h3><p>Placeholder, filled, invalid, and disabled.</p></div><a class="component-label source-link" href="https://www.figma.com/design/zpykphKQ2es7WjtOvymue6?node-id=93731-320137">FIGMA ↗</a></div><div class="preview state-preview"><div class="field"><Label for="small-input">Small · 24px</Label><Input id="small-input" controlSize="sm" placeholder="First name" /></div><div class="field"><Label for="invalid-input">Invalid</Label><Input id="invalid-input" value="Tim" aria-invalid="true" aria-describedby="invalid-hint" /><span id="invalid-hint" class="field-hint danger-hint">This is a hint text to help user.</span></div><div class="field"><Label for="disabled-input">Disabled</Label><Input id="disabled-input" value="Tim" disabled /></div><div class="field"><Label for="invalid-note">Text area</Label><Textarea id="invalid-note" aria-invalid="true" aria-describedby="note-hint" placeholder="Add a little context…" /><span id="note-hint" class="field-hint danger-hint">This is a hint text to help user.</span></div></div><div class="panel-foot"><span>Inter 13 / 400 · Label 11 / 600</span><span>Text area min. height 80</span></div></article>
-   <article class="demo-panel wide"><div class="panel-heading"><div><span class="number">04</span><h3>Small card</h3><p>The compact record row from Twenty’s component library.</p></div><a class="component-label source-link" href="https://www.figma.com/design/zpykphKQ2es7WjtOvymue6?node-id=9214-89505">FIGMA ↗</a></div><div class="preview"><Card.Root><Card.Avatar /><Card.Header><Card.Title>Thomas Kurian</Card.Title><Card.Description>Add a job title</Card.Description></Card.Header><Card.Action aria-label="Remove Thomas Kurian" onclick={() => cardAction = "Remove requested locally."} /></Card.Root><p class="status" role="status">{cardAction}</p></div><div class="panel-foot"><span>Height 64 · Padding 12 · Text gap 8</span><span>Source: Cards/Small Card · Big</span></div></article>
-  </section>
-  <section class="usage wrap" id="usage"><div class="usage-copy"><div class="section-kicker">GET STARTED <span>02 / 03</span></div><h2>Start with the essentials.</h2><p>Use the components as a foundation, then make them your own. The source is yours to explore and adapt.</p><a href="https://github.com/maxffarrell/twenty-svelte#use-from-a-local-checkout">Read the setup guide <span aria-hidden="true">→</span></a></div><div class="code-window"><div class="code-head"><span><i></i><i></i><i></i> &nbsp; Contact.svelte</span><button onclick={copyExample}>{copied ? 'Copied!' : 'Copy code'}</button></div><pre><code>{example}</code></pre></div></section>
-  <section class="closing wrap"><div><div class="section-kicker">BUILT IN THE OPEN <span>03 / 03</span></div><h2>Good interfaces are<br/><em>better together.</em></h2><p>An independent project inspired by Twenty, built for the Svelte community.</p></div><a class="action-primary" href="https://github.com/maxffarrell/twenty-svelte">Explore the repository ↗</a></section>
- </main><footer class="footer wrap"><span class="brand"><span class="brand-mark">tw</span> twenty <span class="brand-muted">/ svelte</span></span><span>Independent community project · MIT licensed</span><a href="https://github.com/maxffarrell/twenty-svelte">GitHub ↗</a></footer>
+ <aside class="sidebar">
+  <a class="wordmark" href="#overview"><span class="wordmark-symbol">tw</span><span>Twenty <span class="wordmark-secondary">Svelte</span></span></a>
+  <div class="sidebar-section"><span class="nav-heading">WORKBENCH</span><nav aria-label="Workbench"><DemoLink href="#overview">Overview</DemoLink><DemoLink href="#workspace">Contact workspace</DemoLink><DemoLink href="#components">Components</DemoLink><DemoLink href="#usage">Use in your project</DemoLink></nav></div>
+  <div class="sidebar-section"><span class="nav-heading">RESOURCES</span><nav aria-label="Resources"><DemoLink href="/reference">Figma specimens ↗</DemoLink><DemoLink href="https://www.figma.com/design/zpykphKQ2es7WjtOvymue6/Twenty--Copy-">Design source ↗</DemoLink><DemoLink href="https://github.com/maxffarrell/twenty-svelte">GitHub ↗</DemoLink></nav></div>
+  <div class="sidebar-bottom"><span class="system-indicator"></span> System appearance <span class="theme-light-name">· Light</span><span class="theme-dark-name">· Dark</span><p>Independent community port<br/>Open source · MIT licensed</p></div>
+ </aside>
+ <div class="main-column">
+  <header class="toolbar"><span>Library <span class="breadcrumb-divider">/</span> <strong>Overview</strong></span><DemoLink variant="secondary" href="https://github.com/maxffarrell/twenty-svelte">View source ↗</DemoLink></header>
+  <main id="content">
+   <section class="overview" id="overview"><div class="section-eyebrow">TWENTY DESIGN SYSTEM / SVELTE 5</div><h1>Small components.<br/>A complete working surface.</h1><p>Twenty’s precise, compact controls, ported from Figma to Svelte. This workbench uses the same components you’ll use in your app.</p><div class="overview-actions"><DemoLink variant="primary" href="#workspace">Try the workspace ↓</DemoLink><DemoLink variant="secondary" href="/reference">Inspect Figma specimens ↗</DemoLink></div><div class="spec-strip"><span><strong>05</strong> component types</span><span><strong>180</strong> button specimens</span><span><strong>24 / 32</strong> px controls</span></div></section>
+   <section class="section" id="workspace">
+    <div class="section-heading"><div><span class="section-eyebrow">01 / IN CONTEXT</span><h2>A little workspace. Real components.</h2><p>Search, add, and remove contacts to see the library at work.</p></div><Button variant="tertiary" showLeadingIcon={false} onclick={() => { contacts = seed.map(contact => ({ ...contact })); query = ''; status = 'Example contacts restored.'; }}>Reset example</Button></div>
+    <div class="workspace-surface">
+     <div class="workspace-bar"><span>Contacts <span class="count">{contacts.length}</span></span><span class="local-label">Local playground</span></div>
+     <div class="workspace-grid">
+      <div class="contact-list"><div class="search-field"><Label for="search">Search contacts</Label><Input id="search" type="search" placeholder="Name, email, or job title…" showPrefix={false} bind:value={query}/></div><div class="records">{#each filtered as contact (contact.id)}<Card.Root><Card.Avatar letter={contact.name.charAt(0)} /><Card.Header><Card.Title>{contact.name}</Card.Title><Card.Description>{contact.role}</Card.Description></Card.Header><Card.Action aria-label={`Remove ${contact.name}`} onclick={() => remove(contact.id)} /></Card.Root>{:else}<p class="empty-state">{query ? 'No contacts match your search.' : 'Your next connection starts here. Add a contact.'}</p>{/each}</div><p class="list-caption">{filtered.length} of {contacts.length} contacts</p></div>
+      <form class="contact-form" onsubmit={save}><div class="form-heading"><h3>Add a contact</h3><p>Make room for someone new.</p></div><div class="field"><Label for="name">Full name</Label><Input id="name" autocomplete="name" placeholder="e.g. Grace Hopper" showPrefix={false} bind:value={name} required pattern=".*\S.*" /></div><div class="field"><Label for="email">Email address</Label><Input id="email" autocomplete="email" type="email" placeholder="grace@company.com" showPrefix={false} bind:value={email} required /></div><div class="field"><Label for="note">Job title · optional</Label><Textarea id="note" placeholder="What do they do?" bind:value={note}/></div><div class="form-actions"><Button type="submit" accent="blue" showLeadingIcon={false}>Save contact</Button><Button variant="secondary" showLeadingIcon={false} onclick={() => { name = ''; email = ''; note = ''; }}>Clear</Button></div></form>
+     </div><div class="workspace-status" role="status">{status}</div>
+    </div>
+   </section>
+   <section class="section" id="components"><div class="section-heading"><div><span class="section-eyebrow">02 / THE BUILDING BLOCKS</span><h2>Precision, down to the state.</h2><p>Source dimensions, typography, borders, icons, and interaction states.</p></div><DemoLink href="/reference">All specimens ↗</DemoLink></div>
+    <div class="component-table">{#each ['primary', 'secondary', 'tertiary'] as variant (variant)}<div class="component-row"><div class="component-name"><h3>{variant}</h3><span>24px / 32px</span></div><div class="button-specimens">{#each ['default', 'blue', 'danger'] as accent (accent)}<div class="specimen-pair"><Button variant={variant as 'primary' | 'secondary' | 'tertiary'} accent={accent as 'default' | 'blue' | 'danger'} size="sm">Filter</Button><Button variant={variant as 'primary' | 'secondary' | 'tertiary'} accent={accent as 'default' | 'blue' | 'danger'}>Filter</Button></div>{/each}</div></div>{/each}<div class="component-row"><div class="component-name"><h3>Field states</h3><span>Input / label</span></div><div class="field-specimens"><div class="field"><Label for="small">Small · 24px</Label><Input id="small" controlSize="sm" placeholder="First name" /></div><div class="field"><Label for="invalid">Invalid</Label><Input id="invalid" value="Tim" aria-invalid="true" /></div><div class="field"><Label for="disabled">Disabled</Label><Input id="disabled" value="Tim" disabled /></div></div></div></div>
+    <p class="source-note">Light specimens are measured against the Figma source. Dark appearance uses Twenty’s public theme tokens.</p>
+   </section>
+   <section class="section usage-section" id="usage"><div><span class="section-eyebrow">03 / START BUILDING</span><h2>Bring the system<br/>to your own surface.</h2><p>Import the components and their styles from a local checkout. Keep the familiar details; build your own workflows.</p><DemoLink variant="secondary" href="https://github.com/maxffarrell/twenty-svelte#use-from-a-local-checkout">Read the setup guide ↗</DemoLink></div><div class="code-panel"><div class="code-heading"><span>Contact.svelte</span><Button variant="tertiary" size="sm" showLeadingIcon={false} onclick={copy}>{copied ? 'Copied' : 'Copy code'}</Button></div><pre><code>{example}</code></pre></div></section>
+   <footer class="workbench-footer"><span>Twenty Svelte <span class="footer-dot">·</span> Built with its own components.</span><span>Inter · Twenty tokens · Svelte 5</span></footer>
+  </main>
+ </div>
 </div>

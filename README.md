@@ -4,6 +4,8 @@ A Svelte 5 component library with Button, Input, Label, Textarea, and Small Card
 
 ## Run locally
 
+Use Node 22.17 or newer (Node 24 LTS recommended by the current toolchain); this checkout was validated with Node 26.13. SvelteKit 3 and its tooling currently require TypeScript 6, so TypeScript 7 is not selected. See [dependency maintenance](docs/DEPENDENCIES.md) for the audit result and remaining upstream advisory.
+
 ```sh
 npm ci
 npm run dev
@@ -12,7 +14,7 @@ npm test
 npm run build
 ```
 
-The demo at `/` shows Figma button variants, field states, and a contact form. The library exports `Button`, `Input`, `Label`, `Textarea`, and the `Card` namespace. These components forward native attributes and events; label inputs with `Label` and `for`/`id` (or an accessible name). Buttons default to `type="button"`; set `type="submit"` for forms.
+The demo at `/` is a responsive component workbench: its navigation and actions use Button, its working contact workspace uses Input, Label, Textarea, and Card, and its specimen table exposes Figma variants and field states. It follows `prefers-color-scheme` on first paint and responds to system appearance changes while open. Contact changes are held in memory for the current tab and are never submitted to a backend. `/reference` intentionally stays light for comparison with the verified light Figma source. The library exports `Button`, `Input`, `Label`, `Textarea`, and the `Card` namespace. These components forward native attributes and events; label inputs with `Label` and `for`/`id` (or an accessible name). Buttons default to `type="button"`; set `type="submit"` for forms.
 
 ## Use from a local checkout
 
