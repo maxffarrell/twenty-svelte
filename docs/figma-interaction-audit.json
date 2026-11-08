@@ -1,0 +1,495 @@
+{
+  "fileKey": "zpykphKQ2es7WjtOvymue6",
+  "method": "Read-only authenticated Figma Variables UI; no modes or variable values edited. Values are UI-displayed hex and alpha values, not a resolved component binding audit.",
+  "columns": [
+    "Light",
+    "Dark"
+  ],
+  "groups": {
+    "gray": [
+      {
+        "step": 1,
+        "values": [
+          "FFFFFF",
+          "171717"
+        ]
+      },
+      {
+        "step": 2,
+        "values": [
+          "FCFCFC",
+          "1B1B1B"
+        ]
+      },
+      {
+        "step": 3,
+        "values": [
+          "F9F9F9",
+          "191919"
+        ]
+      },
+      {
+        "step": 4,
+        "values": [
+          "F1F1F1",
+          "1D1D1D"
+        ]
+      },
+      {
+        "step": 5,
+        "values": [
+          "EBEBEB",
+          "222222"
+        ]
+      },
+      {
+        "step": 6,
+        "values": [
+          "D6D6D6",
+          "484848"
+        ]
+      },
+      {
+        "step": 7,
+        "values": [
+          "CCCCCC",
+          "4C4C4C"
+        ]
+      },
+      {
+        "step": 8,
+        "values": [
+          "B3B3B3",
+          "666666"
+        ]
+      },
+      {
+        "step": 9,
+        "values": [
+          "999999",
+          "818181"
+        ]
+      },
+      {
+        "step": 10,
+        "values": [
+          "838383",
+          "7B7B7B"
+        ]
+      },
+      {
+        "step": 11,
+        "values": [
+          "666666",
+          "B3B3B3"
+        ]
+      },
+      {
+        "step": 12,
+        "values": [
+          "333333",
+          "EBEBEB"
+        ]
+      }
+    ],
+    "red": [
+      {
+        "step": 1,
+        "values": [
+          "FFFCFC",
+          "1F1315"
+        ]
+      },
+      {
+        "step": 2,
+        "values": [
+          "FFF8F8",
+          "291415"
+        ]
+      },
+      {
+        "step": 3,
+        "values": [
+          "FFEFEF",
+          "3C181A"
+        ]
+      },
+      {
+        "step": 4,
+        "values": [
+          "FFE5E5",
+          "481A1D"
+        ]
+      },
+      {
+        "step": 5,
+        "values": [
+          "FDD8D8",
+          "541B1F"
+        ]
+      },
+      {
+        "step": 6,
+        "values": [
+          "F9C6C6",
+          "671E22"
+        ]
+      },
+      {
+        "step": 7,
+        "values": [
+          "F3AEAF",
+          "822025"
+        ]
+      },
+      {
+        "step": 8,
+        "values": [
+          "EB9091",
+          "AA2429"
+        ]
+      },
+      {
+        "step": 9,
+        "values": [
+          "E5484D",
+          "E5484D"
+        ]
+      },
+      {
+        "step": 10,
+        "values": [
+          "DC3D43",
+          "F2555A"
+        ]
+      },
+      {
+        "step": 11,
+        "values": [
+          "CD2B31",
+          "FF6369"
+        ]
+      },
+      {
+        "step": 12,
+        "values": [
+          "381316",
+          "FEECEE"
+        ]
+      }
+    ],
+    "indigo": [
+      {
+        "step": 1,
+        "values": [
+          "FDFDFE",
+          "131620"
+        ]
+      },
+      {
+        "step": 2,
+        "values": [
+          "F8FAFF",
+          "15192D"
+        ]
+      },
+      {
+        "step": 3,
+        "values": [
+          "F0F4FF",
+          "192140"
+        ]
+      },
+      {
+        "step": 4,
+        "values": [
+          "E6EDFE",
+          "1C274F"
+        ]
+      },
+      {
+        "step": 5,
+        "values": [
+          "D9E2FC",
+          "1F2C5C"
+        ]
+      },
+      {
+        "step": 6,
+        "values": [
+          "C6D4F9",
+          "22346E"
+        ]
+      },
+      {
+        "step": 7,
+        "values": [
+          "AEC0F5",
+          "273E89"
+        ]
+      },
+      {
+        "step": 8,
+        "values": [
+          "8DA4EF",
+          "2F4EB2"
+        ]
+      },
+      {
+        "step": 9,
+        "values": [
+          "3E63DD",
+          "3E63DD"
+        ]
+      },
+      {
+        "step": 10,
+        "values": [
+          "3A5CCC",
+          "5373E7"
+        ]
+      },
+      {
+        "step": 11,
+        "values": [
+          "3451B2",
+          "849DFF"
+        ]
+      },
+      {
+        "step": 12,
+        "values": [
+          "101D46",
+          "EEF1FD"
+        ]
+      }
+    ],
+    "grayAlpha": [
+      {
+        "step": 1,
+        "values": [
+          "000000",
+          "2%",
+          "FFFFFF",
+          "3%"
+        ]
+      },
+      {
+        "step": 2,
+        "values": [
+          "000000",
+          "3%",
+          "FFFFFF",
+          "4%"
+        ]
+      },
+      {
+        "step": 3,
+        "values": [
+          "000000",
+          "4%",
+          "FFFFFF",
+          "6%"
+        ]
+      },
+      {
+        "step": 4,
+        "values": [
+          "000000",
+          "7.1%",
+          "FFFFFF",
+          "7.7%"
+        ]
+      },
+      {
+        "step": 5,
+        "values": [
+          "000000",
+          "8%",
+          "FFFFFF",
+          "10%"
+        ]
+      },
+      {
+        "step": 6,
+        "values": [
+          "000000",
+          "11.4%",
+          "FFFFFF",
+          "12.9%"
+        ]
+      },
+      {
+        "step": 7,
+        "values": [
+          "000000",
+          "16%",
+          "FFFFFF",
+          "14%"
+        ]
+      },
+      {
+        "step": 8,
+        "values": [
+          "000000",
+          "22%",
+          "FFFFFF",
+          "24.9%"
+        ]
+      },
+      {
+        "step": 9,
+        "values": [
+          "000000",
+          "36%",
+          "FFFFFF",
+          "38.6%"
+        ]
+      },
+      {
+        "step": 10,
+        "values": [
+          "000000",
+          "47.8%",
+          "FFFFFF",
+          "44.6%"
+        ]
+      },
+      {
+        "step": 11,
+        "values": [
+          "000000",
+          "72%",
+          "FFFFFF",
+          "59.2%"
+        ]
+      },
+      {
+        "step": 12,
+        "values": [
+          "000000",
+          "91%",
+          "FFFFFF",
+          "92.3%"
+        ]
+      }
+    ],
+    "purple": [
+      {
+        "step": 1,
+        "values": [
+          "FEFCFE",
+          "1B141D"
+        ]
+      },
+      {
+        "step": 2,
+        "values": [
+          "FDFAFF",
+          "221527"
+        ]
+      },
+      {
+        "step": 3,
+        "values": [
+          "F9F1FE",
+          "301A3A"
+        ]
+      },
+      {
+        "step": 4,
+        "values": [
+          "F3E7FC",
+          "3A1E48"
+        ]
+      },
+      {
+        "step": 5,
+        "values": [
+          "EDDBF9",
+          "432155"
+        ]
+      },
+      {
+        "step": 6,
+        "values": [
+          "E3CCF4",
+          "4E2667"
+        ]
+      },
+      {
+        "step": 7,
+        "values": [
+          "D3B4ED",
+          "5F2D84"
+        ]
+      },
+      {
+        "step": 8,
+        "values": [
+          "BE93E4",
+          "7938B2"
+        ]
+      },
+      {
+        "step": 9,
+        "values": [
+          "8E4EC6",
+          "8E4EC6"
+        ]
+      },
+      {
+        "step": 10,
+        "values": [
+          "8445BC",
+          "9D5BD2"
+        ]
+      },
+      {
+        "step": 11,
+        "values": [
+          "793AAF",
+          "BF7AF0"
+        ]
+      },
+      {
+        "step": 12,
+        "values": [
+          "2B0E44",
+          "F7ECFC"
+        ]
+      }
+    ]
+  },
+  "prototypeObservations": [
+    {
+      "nodeId": "925:30301",
+      "name": "primary / default / medium / default / not inverted",
+      "trigger": "While hovering",
+      "destinationState": "hover",
+      "animation": "Instant"
+    },
+    {
+      "nodeId": "925:30303",
+      "name": "primary / default / medium / hover / not inverted",
+      "trigger": "While pressing",
+      "destinationState": "pressed",
+      "animation": "Smart animate",
+      "easing": "Ease out",
+      "durationMs": 100
+    }
+  ],
+  "fieldObservations": [
+    {
+      "nodeId": "93731:320173",
+      "name": "Textarea / Disabled",
+      "selectionColors": {
+        "Text/Light": "#b3b3b3",
+        "Text/Secondary": "#666666",
+        "Transparent/Lighter": "#000000 / 2%",
+        "Borders/Medium": "#ebebeb"
+      },
+      "prototypeInteractions": []
+    }
+  ]
+}

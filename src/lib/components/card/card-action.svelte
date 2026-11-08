@@ -12,5 +12,5 @@
 	class={cn("tw-card-action", className)}
 	{...restProps}
 >
-	{#if children}{@render children()}{:else}<img src={trashIcon} alt="" width="16" height="16" />{/if}
+	{#if children}{@render children()}{:else}<span class="tw-figma-icon tw-card-action-icon" style:mask-image={`url("${trashIcon}")`} aria-hidden="true"></span>{/if}
 </button>

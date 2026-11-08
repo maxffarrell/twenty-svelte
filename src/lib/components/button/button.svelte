@@ -30,7 +30,8 @@
 <script lang="ts">
 	import { cn } from "$lib/utils.js";
 	import type { HTMLButtonAttributes } from "svelte/elements";
-	import type { Snippet } from "svelte";
+	import { onDestroy, type Snippet } from "svelte";
+	import { createPressMotion } from "./press-motion.js";
 	import searchIcon from "$lib/assets/figma/search.svg";
 	import chevronIcon from "$lib/assets/figma/chevron-down.svg";
 
@@ -64,10 +65,23 @@
 			ref?: HTMLElement | null;
 		} = $props();
 
+ let pressTransition = $state(false);
+ const pressMotion = createPressMotion(enabled => { pressTransition = enabled; });
+ onDestroy(() => pressMotion.cancel());
+
 	const mergedProps = $derived({
 		...restProps,
 		type,
 		class: cn(buttonVariants({ variant, size, accent: accent ?? (variant === "destructive" ? "danger" : "default") }), className),
+  onpointerdown: (event: Parameters<NonNullable<HTMLButtonAttributes['onpointerdown']>>[0]) => { pressMotion.press(); restProps.onpointerdown?.(event); },
+  onpointerup: (event: Parameters<NonNullable<HTMLButtonAttributes['onpointerup']>>[0]) => { pressMotion.release(); restProps.onpointerup?.(event); },
+  onpointercancel: (event: Parameters<NonNullable<HTMLButtonAttributes['onpointercancel']>>[0]) => { pressMotion.cancel(); restProps.onpointercancel?.(event); },
+  onpointerleave: (event: Parameters<NonNullable<HTMLButtonAttributes['onpointerleave']>>[0]) => { pressMotion.cancel(); restProps.onpointerleave?.(event); },
+  onkeydown: (event: Parameters<NonNullable<HTMLButtonAttributes['onkeydown']>>[0]) => { if (event.key === ' ' || event.key === 'Enter') pressMotion.press(); restProps.onkeydown?.(event); },
+  onkeyup: (event: Parameters<NonNullable<HTMLButtonAttributes['onkeyup']>>[0]) => { if (event.key === ' ' || event.key === 'Enter') pressMotion.release(); restProps.onkeyup?.(event); },
+  onblur: (event: Parameters<NonNullable<HTMLButtonAttributes['onblur']>>[0]) => { pressMotion.cancel(); restProps.onblur?.(event); },
+  "data-press-transition": pressTransition && !restProps.disabled ? 'true' : undefined,
+  "data-control-size": size === 'sm' || size === 'icon-sm' ? 'sm' : 'md',
 		"data-slot": "button",
 		"data-variant": variant === "secondary" || variant === "outline" ? "secondary" : variant === "tertiary" || variant === "ghost" || variant === "link" ? "tertiary" : "primary",
 		"data-accent": accent ?? (variant === "destructive" ? "danger" : "default"),

@@ -5,6 +5,8 @@
     corner-shape: round;
     -webkit-font-smoothing: antialiased;
   }
+  :where(.light) { color-scheme: light; }
+  :where(.dark) { color-scheme: dark; }
   :where(.light, .dark) {
     --tw-control-font: Inter, ui-sans-serif, system-ui, sans-serif;
     --tw-text: var(--t-font-color-primary);
@@ -69,7 +71,9 @@
     white-space: nowrap;
     cursor: pointer;
     outline: none;
-    transition: none;
+    --tw-hover-duration: 0ms;
+    --tw-button-duration: var(--tw-hover-duration);
+    transition: background-color var(--tw-button-duration) ease-out, color var(--tw-button-duration) ease-out, box-shadow var(--tw-button-duration) ease-out;
     --tw-button-tint: var(--tw-hover);
     --tw-button-color: var(--tw-secondary-text);
     --tw-button-outline: var(--tw-button-border);
@@ -103,7 +107,14 @@
   }
   .tw-button--primary:hover { background: var(--tw-button-fill-hover); }
   .tw-button--primary:active { background: var(--tw-button-fill-pressed); }
-  .tw-button:active { transition: background-color 100ms ease-out; }
+  /* Source ON_PRESS interactions: Smart animate / [0, 0, .58, 1] / 100ms.
+     The short-lived flag keeps that timing on release, without animating
+     ordinary instant hover entry. Five small tertiary variants use 75ms. */
+  .tw-button:active:not(:disabled), .tw-button[data-press-transition='true'], .tw-button[data-motion-preview] { --tw-button-duration: 100ms; }
+  .tw-button[data-preview-state]:not([data-motion-preview]) { --tw-button-duration: 0ms; }
+  @media (prefers-reduced-motion: reduce) {
+    .tw-button, .tw-button:active:not(:disabled), .tw-button[data-press-transition='true'], .tw-button[data-motion-preview] { --tw-button-duration: 0ms; }
+  }
   .tw-button--secondary { box-shadow: inset 0 0 0 1px var(--tw-button-outline); color: var(--tw-button-color); }
   .tw-button--tertiary { color: var(--tw-button-color); }
   .tw-button--secondary:hover, .tw-button--secondary:active,
@@ -111,7 +122,7 @@
   .tw-button:focus-visible {
     box-shadow: inset 0 0 0 1px var(--tw-blue), inset 0 0 0 3px var(--tw-focus-inset);
   }
-  .tw-button:disabled { opacity: .24; pointer-events: none; cursor: default; }
+  .tw-button:disabled { --tw-button-duration: 0ms; opacity: .24; pointer-events: none; cursor: default; }
   .tw-button--sm { height: 24px; }
   .tw-button--icon { width: 32px; padding: 0; }
   .tw-button--icon-sm { width: 24px; height: 24px; padding: 0; }
@@ -122,12 +133,8 @@
   .tw-button-icon { width:14px; height:14px; }
   .tw-input-icon { width:16px; height:16px; }
   .tw-button-separator { width:1px; height:calc(100% - 16px); min-height:8px; border-radius:56px; background:var(--tw-hover); }
-  .tw-button-shortcut { color:var(--tw-label); }
-  .tw-button--blue .tw-button-shortcut { color:#aec0f5; }
-  .tw-button--danger .tw-button-shortcut { color:#eb9091; }
-  .tw-button--blue .tw-button-separator { background:#f0f4ff; }
-  .tw-button--danger .tw-button-separator { background:#ffe5e5; }
-  .tw-button--primary:where(.tw-button--blue,.tw-button--danger) .tw-button-shortcut { color:inherit; }
+  .tw-button-shortcut { color:var(--tw-shortcut-color, var(--tw-label)); transition:color var(--tw-button-duration) ease-out; }
+  .tw-button-separator { background:var(--tw-separator-color, var(--tw-hover)); transition:background-color var(--tw-button-duration) ease-out; }
   @supports (width: calc-size(max-content, round(up, size, 1px))) {
     .tw-button { width:calc-size(max-content, round(up, size, 1px)); }
     .tw-button--icon { width:32px; }
@@ -162,7 +169,9 @@
   .tw-textarea:focus { box-shadow:inset 0 0 0 1px var(--tw-blue); }
   .tw-input[aria-invalid='true'] { border-color: var(--tw-danger-border); }
   .tw-textarea[aria-invalid='true'] { box-shadow:inset 0 0 0 1px var(--tw-textarea-danger-border); }
-  .tw-input:disabled, .tw-textarea:disabled { color: var(--tw-label); cursor: not-allowed; }
+  .tw-input:disabled { color: var(--tw-label); cursor: not-allowed; }
+  /* Disabled textarea 93731:320173 uses Text/Secondary, not Text/Light. */
+  .tw-textarea:disabled, .tw-textarea:disabled::placeholder { color: var(--tw-secondary-text); cursor: not-allowed; }
   .tw-label {
     display: flex;
     align-items: center;
@@ -187,6 +196,7 @@
   .tw-card-title, .tw-card-description { margin:0; font:500 13px/1.4 var(--tw-control-font); letter-spacing:0; }
   .tw-card-description { font-weight:400; color:var(--t-font-color-tertiary); }
   .tw-card-action { display:flex; align-items:center; justify-content:center; width:24px; height:24px; padding:0 4px; flex-shrink:0; background:transparent; border:0; border-radius:8px; cursor:pointer; }
+  .tw-card-action-icon { width:16px; height:16px; }
   .tw-card-avatar { display:flex; align-items:center; justify-content:center; flex:none; width:24px; height:24px; box-sizing:border-box; padding:8px; border-radius:80px; background:#eddbf9; color:#2b0e44; font:500 13px/1.4 var(--tw-control-font); }
   .tw-card-avatar span { flex:none; }
   .tw-card-content { min-width:0; flex:1; }

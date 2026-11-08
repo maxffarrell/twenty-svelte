@@ -1,0 +1,22 @@
+/* Generated from docs/figma-resolved-field-audit.json. Both source palette modes. */
+@layer components {
+  :where(.light, .dark) { --tw-text: light-dark(#333333, #ebebeb); --tw-secondary-text: light-dark(#666666, #b3b3b3); --tw-label: light-dark(#b3b3b3, #666666); --tw-surface: light-dark(rgb(0 0 0 / 2%), rgb(255 255 255 / 3%)); --tw-border: light-dark(#ebebeb, #222222); --tw-blue: #3e63dd; --tw-danger-border: light-dark(#f9c6c6, #671e22); --tw-textarea-danger-border: light-dark(#ffe5e5, #481a1d); }
+  .tw-input-shell { color: light-dark(#333333, #ebebeb); }
+  .tw-input-shell:has(.tw-input:placeholder-shown) { color: light-dark(#b3b3b3, #666666); }
+  .tw-input-shell:focus-within { color: light-dark(#333333, #ebebeb); }
+  .tw-input-shell[data-invalid="true"] { color: light-dark(#333333, #ebebeb); }
+  .tw-input:disabled, .tw-input:disabled::placeholder { color: light-dark(#666666, #b3b3b3); }
+  .tw-input-shell:has(.tw-input:disabled) { color: light-dark(#666666, #b3b3b3); }
+  .tw-input::selection, .tw-textarea::selection { background-color: light-dark(#e6edfe, #1c274f); color: var(--tw-text); }
+  .tw-card { box-shadow: inset 0 -1px 0 light-dark(#f1f1f1, #1d1d1d); }
+  .tw-card-description { color: light-dark(#999999, #818181); }
+  .tw-card-avatar { background-color: light-dark(#eddbf9, #432155); color: light-dark(#2b0e44, #f7ecfc); }
+  .tw-card-action { color: light-dark(#999999, #818181); outline: none; transition: background-color 100ms ease-out, color 100ms ease-out, box-shadow 100ms ease-out; }
+  .tw-card-action:hover:not(:disabled) { background-color: light-dark(rgb(0 0 0 / 4%), rgb(255 255 255 / 6%)); }
+  .tw-card-action:focus-visible:not(:disabled) { background-color: light-dark(rgb(0 0 0 / 4%), rgb(255 255 255 / 6%)); box-shadow: inset 0 0 0 1px #3e63dd; }
+  .tw-card-action:active:not(:disabled) { background-color: light-dark(rgb(0 0 0 / 8%), rgb(255 255 255 / 10%)); box-shadow: none; }
+  .tw-card-action[aria-pressed="true"]:not(:disabled) { color: #3e63dd; }
+  .tw-card-action:disabled { color: light-dark(#cccccc, #4c4c4c); cursor: not-allowed; transition: none; }
+  .tw-card-action[aria-busy="true"] > * { visibility: hidden; }
+  @media (prefers-reduced-motion: reduce) { .tw-card-action { transition: none; } }
+}
