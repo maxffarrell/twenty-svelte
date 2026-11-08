@@ -1,0 +1,168 @@
+/* Measured from Twenty's Figma components. See docs/FIGMA_PORT.md. */
+@layer components {
+  :where(.light, .dark) {
+    --tw-control-font: Inter, ui-sans-serif, system-ui, sans-serif;
+    --tw-text: var(--t-font-color-primary);
+    --tw-secondary-text: var(--t-font-color-secondary);
+    --tw-label: var(--t-font-color-light);
+    --tw-surface: var(--t-background-transparent-lighter);
+    --tw-hover: var(--t-background-transparent-light);
+    --tw-pressed: var(--t-background-transparent-medium);
+    --tw-border: var(--t-border-color-medium);
+    --tw-button-border: var(--t-background-transparent-medium);
+    --tw-blue: var(--t-accent-accent9);
+    --tw-blue-hover: var(--t-accent-accent10);
+    --tw-blue-pressed: #101d46;
+    --tw-blue-tint: var(--t-color-blue3);
+    --tw-blue-border: var(--t-accent-accent6);
+    --tw-danger: var(--t-color-red9);
+    --tw-danger-hover: var(--t-color-red10);
+    --tw-danger-tint: var(--t-color-red3);
+    --tw-danger-border: var(--t-color-red6);
+    --tw-textarea-danger-border: var(--t-border-color-danger);
+    --tw-focus-inset: var(--t-background-primary);
+  }
+
+  /* Figma's light-mode sRGB values, rather than a browser conversion of P3. */
+  .light {
+    --tw-text: #333333;
+    --tw-secondary-text: #666666;
+    --tw-label: #b3b3b3;
+    --tw-surface: rgb(0 0 0 / 2%);
+    --tw-hover: rgb(0 0 0 / 4%);
+    --tw-pressed: rgb(0 0 0 / 8%);
+    --tw-border: #ebebeb;
+    --tw-button-border: rgb(0 0 0 / 8%);
+    --tw-blue: #3e63dd;
+    --tw-blue-hover: #3a5ccc;
+    --tw-blue-pressed: #101d46;
+    --tw-blue-tint: #f0f4ff;
+    --tw-blue-border: #c6d4f9;
+    --tw-danger: #e5484d;
+    --tw-danger-hover: #dc3d43;
+    --tw-danger-tint: #ffefef;
+    --tw-danger-border: #f9c6c6;
+    --tw-textarea-danger-border: #ffe5e5;
+    --tw-focus-inset: #ffffff;
+  }
+
+  .tw-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 4px;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--tw-secondary-text);
+    font: 500 13px/1.4 var(--tw-control-font);
+    letter-spacing: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    transition: none;
+    --tw-button-tint: var(--tw-hover);
+    --tw-button-color: var(--tw-secondary-text);
+    --tw-button-outline: var(--tw-button-border);
+    --tw-button-fill: var(--tw-surface);
+    --tw-button-fill-hover: var(--tw-hover);
+    --tw-button-fill-pressed: var(--tw-pressed);
+  }
+  .tw-button--blue {
+    --tw-button-tint: var(--tw-blue-tint);
+    --tw-button-color: var(--tw-blue);
+    --tw-button-outline: var(--tw-blue-border);
+    --tw-button-fill: var(--tw-blue);
+    --tw-button-fill-hover: var(--tw-blue-hover);
+    --tw-button-fill-pressed: var(--tw-blue-pressed);
+  }
+  .tw-button--danger {
+    --tw-button-tint: var(--tw-danger-tint);
+    --tw-button-color: var(--tw-danger);
+    --tw-button-outline: var(--tw-danger-border);
+    --tw-button-fill: var(--tw-danger);
+    --tw-button-fill-hover: var(--tw-danger-hover);
+    --tw-button-fill-pressed: var(--tw-danger-hover);
+  }
+  .tw-button--primary {
+    background: var(--tw-button-fill);
+    box-shadow: inset 0 0 0 1px var(--tw-button-outline);
+  }
+  .tw-button--primary:where(.tw-button--blue, .tw-button--danger) {
+    color: white;
+    box-shadow: inset 0 0 0 1px var(--tw-hover);
+  }
+  .tw-button--primary:hover { background: var(--tw-button-fill-hover); }
+  .tw-button--primary:active { background: var(--tw-button-fill-pressed); }
+  .tw-button:active { transition: background-color 100ms ease-out; }
+  .tw-button--secondary { box-shadow: inset 0 0 0 1px var(--tw-button-outline); color: var(--tw-button-color); }
+  .tw-button--tertiary { color: var(--tw-button-color); }
+  .tw-button--secondary:hover, .tw-button--secondary:active,
+  .tw-button--tertiary:hover, .tw-button--tertiary:active { background: var(--tw-button-tint); }
+  .tw-button:focus-visible {
+    box-shadow: inset 0 0 0 1px var(--tw-blue), inset 0 0 0 3px var(--tw-focus-inset);
+  }
+  .tw-button:disabled { opacity: .24; pointer-events: none; cursor: default; }
+  .tw-button--sm { height: 24px; }
+  .tw-button--icon { width: 32px; padding: 0; }
+  .tw-button--icon-sm { width: 24px; height: 24px; padding: 0; }
+  .tw-button--link { text-decoration: underline; text-underline-offset: 4px; }
+  .tw-button svg { width: 14px; height: 14px; flex-shrink: 0; pointer-events: none; }
+  .tw-button-label { display: block; }
+
+  .tw-input, .tw-textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--tw-border);
+    border-radius: 8px;
+    background: var(--tw-surface);
+    color: var(--tw-text);
+    font: 400 13px/1.4 var(--tw-control-font);
+    letter-spacing: 0;
+    box-shadow: none;
+    outline: none;
+  }
+  .tw-input { height: 32px; padding: 0 4px 0 8px; }
+  .tw-input[data-control-size='sm'] { height: 24px; }
+  .tw-textarea { min-height: 80px; padding: 8px; resize: vertical; }
+  .tw-input::placeholder, .tw-textarea::placeholder { color: var(--tw-label); opacity: 1; }
+  .tw-input:focus, .tw-textarea:focus { border-color: var(--tw-blue); }
+  .tw-input[aria-invalid='true'] { border-color: var(--tw-danger-border); }
+  .tw-textarea[aria-invalid='true'] { border-color: var(--tw-textarea-danger-border); }
+  .tw-input:disabled, .tw-textarea:disabled { color: var(--tw-label); cursor: not-allowed; }
+  .tw-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--tw-label);
+    font: 600 11px/1 var(--tw-control-font);
+    letter-spacing: 0;
+    user-select: none;
+  }
+  @supports (text-box-trim: trim-both) {
+    .tw-button-label { text-box-trim: trim-both; text-box-edge: cap alphabetic; }
+    .tw-label-text { text-box-trim: trim-both; text-box-edge: cap alphabetic; }
+  }
+  .tw-card {
+    display:flex; align-items:center; box-sizing:border-box;
+    width:350px; max-width:100%; height:64px; padding:12px; gap:12px;
+    border:0; border-radius:0; background:transparent; box-shadow:inset 0 -1px 0 var(--t-border-color-light);
+    color:var(--tw-text); font:400 13px/1.4 var(--tw-control-font);
+  }
+  .tw-card-header { display:flex; flex-direction:column; flex:1; min-width:0; gap:8px; }
+  .tw-card-title, .tw-card-description { margin:0; font:500 13px/1.4 var(--tw-control-font); letter-spacing:0; }
+  .tw-card-description { font-weight:400; color:var(--t-font-color-tertiary); }
+  .tw-card-action { display:flex; align-items:center; justify-content:center; width:24px; height:24px; flex-shrink:0; }
+  .tw-card-content { min-width:0; flex:1; }
+  .tw-card-footer { display:flex; align-items:center; gap:4px; }
+  @supports (text-box-trim: trim-both) {
+    .tw-card-title, .tw-card-description { text-box-trim:trim-both; text-box-edge:cap alphabetic; }
+  }
+
+}

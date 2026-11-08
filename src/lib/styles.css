@@ -1,4 +1,5 @@
 @import './theme.css';
+@import './figma-components.css';
 @theme inline {
  --color-background: var(--t-background-primary); --color-foreground: var(--t-font-color-primary);
  --color-primary: var(--t-background-primary-inverted); --color-primary-foreground: var(--t-font-color-inverted);

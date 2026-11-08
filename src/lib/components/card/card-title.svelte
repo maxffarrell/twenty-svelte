@@ -7,7 +7,7 @@
 
 <div
 	data-slot="card-title"
-	class={cn("cn-font-heading leading-none font-semibold", className)}
+	class={cn("tw-card-title", className)}
 	{...restProps}
 >
 	{@render children?.()}

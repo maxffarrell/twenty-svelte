@@ -2,30 +2,29 @@
 	import { tv, type VariantProps } from "tailwind-variants";
 
 	export const buttonVariants = tv({
-		base: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-		variants: {
-			variant: {
-				default: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-				destructive:
-					"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-				outline:
-					"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-				secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
-				ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-				link: "text-primary underline-offset-4 hover:underline",
-			},
-			size: {
-				default: "h-9 px-4 py-2 has-[>svg]:px-3",
-				sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-				lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-				icon: "size-9",
-			},
-		},
-		defaultVariants: {
-			variant: "default",
-			size: "default",
-		},
-	});
+        base: "tw-button",
+        variants: {
+            variant: {
+                primary: "tw-button--primary",
+                secondary: "tw-button--secondary",
+                tertiary: "tw-button--tertiary",
+                // Compatibility aliases for the initial shadcn API.
+                default: "tw-button--primary",
+                destructive: "tw-button--primary",
+                outline: "tw-button--secondary",
+                ghost: "tw-button--tertiary",
+                link: "tw-button--tertiary tw-button--link",
+            },
+            accent: { default: "", blue: "tw-button--blue", danger: "tw-button--danger" },
+            size: {
+                default: "", md: "", sm: "tw-button--sm",
+                // Twenty has two button sizes; legacy lg now maps to medium.
+                lg: "", icon: "tw-button--icon", "icon-sm": "tw-button--icon-sm",
+            },
+        },
+        compoundVariants: [{ variant: "destructive", accent: "default", class: "tw-button--danger" }],
+        defaultVariants: { variant: "primary", size: "default", accent: "default" },
+    });
 </script>
 
 <script lang="ts">
@@ -35,23 +34,28 @@
 
 	let {
 		ref = $bindable(null),
-		variant,
+		variant = "primary",
+		accent,
 		size,
 		type = "button",
 		child,
+		leadingIcon,
+		trailingIcon,
 		children,
 		class: className,
 		...restProps
 	}: HTMLButtonAttributes &
 		VariantProps<typeof buttonVariants> & {
 			child?: Snippet<[{ props: Record<string, unknown> }]>;
+			leadingIcon?: Snippet;
+			trailingIcon?: Snippet;
 			ref?: HTMLElement | null;
 		} = $props();
 
 	const mergedProps = $derived({
 		...restProps,
 		type,
-		class: cn(buttonVariants({ variant, size }), className),
+		class: cn(buttonVariants({ variant, size, accent: accent ?? (variant === "destructive" ? "danger" : "default") }), className),
 		"data-slot": "button",
 	});
 </script>
@@ -60,6 +64,8 @@
 	{@render child({ props: mergedProps })}
 {:else}
 	<button {...mergedProps} bind:this={ref}>
-		{@render children?.()}
+		{@render leadingIcon?.()}
+		{#if children}<span class="tw-button-label">{@render children()}</span>{/if}
+		{@render trailingIcon?.()}
 	</button>
 {/if}
