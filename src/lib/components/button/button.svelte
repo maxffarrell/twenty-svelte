@@ -2,57 +2,90 @@
 	import { tv, type VariantProps } from "tailwind-variants";
 
 	export const buttonVariants = tv({
-		base: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-		variants: {
-			variant: {
-				default: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-				destructive:
-					"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-				outline:
-					"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-				secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
-				ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-				link: "text-primary underline-offset-4 hover:underline",
-			},
-			size: {
-				default: "h-9 px-4 py-2 has-[>svg]:px-3",
-				sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-				lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-				icon: "size-9",
-			},
-		},
-		defaultVariants: {
-			variant: "default",
-			size: "default",
-		},
-	});
+        base: "tw-button",
+        variants: {
+            variant: {
+                primary: "tw-button--primary",
+                secondary: "tw-button--secondary",
+                tertiary: "tw-button--tertiary",
+                // Compatibility aliases for the initial shadcn API.
+                default: "tw-button--primary",
+                destructive: "tw-button--primary",
+                outline: "tw-button--secondary",
+                ghost: "tw-button--tertiary",
+                link: "tw-button--tertiary tw-button--link",
+            },
+            accent: { default: "", blue: "tw-button--blue", danger: "tw-button--danger" },
+            size: {
+                default: "", md: "", sm: "tw-button--sm",
+                // Twenty has two button sizes; legacy lg now maps to medium.
+                lg: "", icon: "tw-button--icon", "icon-sm": "tw-button--icon-sm",
+            },
+        },
+        compoundVariants: [{ variant: "destructive", accent: "default", class: "tw-button--danger" }],
+        defaultVariants: { variant: "primary", size: "default", accent: "default" },
+    });
 </script>
 
 <script lang="ts">
 	import { cn } from "$lib/utils.js";
 	import type { HTMLButtonAttributes } from "svelte/elements";
-	import type { Snippet } from "svelte";
+	import { onDestroy, type Snippet } from "svelte";
+	import { createPressMotion } from "./press-motion.js";
+	import searchIcon from "$lib/assets/figma/search.svg";
+	import chevronIcon from "$lib/assets/figma/chevron-down.svg";
 
 	let {
 		ref = $bindable(null),
-		variant,
+		variant = "primary",
+		accent,
 		size,
 		type = "button",
 		child,
+		leadingIcon,
+		trailingIcon,
+		showLeadingIcon = true,
+		showTrailingIcon = false,
+		showShortcut = false,
+		shortcut = "⌘O",
+		inverted = false,
 		children,
 		class: className,
 		...restProps
 	}: HTMLButtonAttributes &
 		VariantProps<typeof buttonVariants> & {
 			child?: Snippet<[{ props: Record<string, unknown> }]>;
+			leadingIcon?: Snippet;
+			trailingIcon?: Snippet;
+			showLeadingIcon?: boolean;
+			showTrailingIcon?: boolean;
+			showShortcut?: boolean;
+			shortcut?: string;
+			inverted?: boolean;
 			ref?: HTMLElement | null;
 		} = $props();
+
+ let pressTransition = $state(false);
+ const pressMotion = createPressMotion(enabled => { pressTransition = enabled; });
+ onDestroy(() => pressMotion.cancel());
 
 	const mergedProps = $derived({
 		...restProps,
 		type,
-		class: cn(buttonVariants({ variant, size }), className),
+		class: cn(buttonVariants({ variant, size, accent: accent ?? (variant === "destructive" ? "danger" : "default") }), className),
+  onpointerdown: (event: Parameters<NonNullable<HTMLButtonAttributes['onpointerdown']>>[0]) => { pressMotion.press(); restProps.onpointerdown?.(event); },
+  onpointerup: (event: Parameters<NonNullable<HTMLButtonAttributes['onpointerup']>>[0]) => { pressMotion.release(); restProps.onpointerup?.(event); },
+  onpointercancel: (event: Parameters<NonNullable<HTMLButtonAttributes['onpointercancel']>>[0]) => { pressMotion.cancel(); restProps.onpointercancel?.(event); },
+  onpointerleave: (event: Parameters<NonNullable<HTMLButtonAttributes['onpointerleave']>>[0]) => { pressMotion.cancel(); restProps.onpointerleave?.(event); },
+  onkeydown: (event: Parameters<NonNullable<HTMLButtonAttributes['onkeydown']>>[0]) => { if (event.key === ' ' || event.key === 'Enter') pressMotion.press(); restProps.onkeydown?.(event); },
+  onkeyup: (event: Parameters<NonNullable<HTMLButtonAttributes['onkeyup']>>[0]) => { if (event.key === ' ' || event.key === 'Enter') pressMotion.release(); restProps.onkeyup?.(event); },
+  onblur: (event: Parameters<NonNullable<HTMLButtonAttributes['onblur']>>[0]) => { pressMotion.cancel(); restProps.onblur?.(event); },
+  "data-press-transition": pressTransition && !restProps.disabled ? 'true' : undefined,
+  "data-control-size": size === 'sm' || size === 'icon-sm' ? 'sm' : 'md',
 		"data-slot": "button",
+		"data-variant": variant === "secondary" || variant === "outline" ? "secondary" : variant === "tertiary" || variant === "ghost" || variant === "link" ? "tertiary" : "primary",
+		"data-accent": accent ?? (variant === "destructive" ? "danger" : "default"),
+		"data-inverted": String(inverted),
 	});
 </script>
 
@@ -60,6 +93,13 @@
 	{@render child({ props: mergedProps })}
 {:else}
 	<button {...mergedProps} bind:this={ref}>
-		{@render children?.()}
+		{#if showLeadingIcon}
+			{#if leadingIcon}{@render leadingIcon()}{:else}<span class="tw-figma-icon tw-button-icon" style:mask-image={`url("${searchIcon}")`} aria-hidden="true"></span>{/if}
+		{/if}
+		{#if children}<span class="tw-button-label">{@render children()}</span>{/if}
+		{#if showShortcut}<span class="tw-button-separator" aria-hidden="true"></span><span class="tw-button-shortcut">{shortcut}</span>{/if}
+		{#if showTrailingIcon}
+			{#if trailingIcon}{@render trailingIcon()}{:else}<span class="tw-figma-icon tw-button-icon" style:mask-image={`url("${chevronIcon}")`} aria-hidden="true"></span>{/if}
+		{/if}
 	</button>
 {/if}

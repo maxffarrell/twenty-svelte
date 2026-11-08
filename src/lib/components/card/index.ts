@@ -5,6 +5,7 @@ import CardDescription from "./card-description.svelte";
 import CardAction from "./card-action.svelte";
 import CardFooter from "./card-footer.svelte";
 import CardContent from "./card-content.svelte";
+import CardAvatar from "./card-avatar.svelte";
 
 export {
 	Card,
@@ -14,6 +15,7 @@ export {
 	CardAction,
 	CardFooter,
 	CardContent,
+	CardAvatar,
 	Card as Root,
 	CardHeader as Header,
 	CardTitle as Title,
@@ -21,4 +23,5 @@ export {
 	CardAction as Action,
 	CardFooter as Footer,
 	CardContent as Content,
+	CardAvatar as Avatar,
 };

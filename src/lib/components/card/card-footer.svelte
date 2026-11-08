@@ -7,7 +7,7 @@
 
 <div
 	data-slot="card-footer"
-	class={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+	class={cn("tw-card-footer", className)}
 	{...restProps}
 >
 	{@render children?.()}
